@@ -1,0 +1,8 @@
+#dash-body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    background-image: url("src/assets/images/main-fondo.jpg");
+}
+  
