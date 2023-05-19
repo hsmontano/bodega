@@ -1,1 +1,16 @@
-<p>catalog works!</p>
+<div class="container-fluid p-2 mt-4 mb-4 bg-white">
+    <div class="row">
+        <div class="col">
+          <h1>Cat&aacute;logo de productos</h1>
+        </div>
+        <div class="col-3">
+          <h5>¿Qu&eacute; est&aacute;s buscando?</h5>
+          <form role="search">
+            <input class="form-control me-2" type="search" placeholder="Buscar producto" [(ngModel)]="filterproduct" name="filterproduct" aria-label="Search">
+        </form>
+        </div>
+      </div>
+      <div class="row mt-4 overflow-hidden">
+        <app-card class="col-4" *ngFor="let product of products | filter: filterproduct " [product]="product"></app-card>
+      </div>
+</div>

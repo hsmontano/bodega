@@ -1,0 +1,15 @@
+body {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    background-image: url("src/assets/images/login-fondo.jpg");
+}
+  
+.form-input {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+}

@@ -1,0 +1,18 @@
+<div class="card my-2" style="width: 18rem;">
+    <img src="assets/images/{{product.imagen}}" class="card-img-top" height="200" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.nombre}}</h5>
+      <ul>
+        <li>precio: {{product.precio}}</li>
+        <li>unidades disponibles: {{product.unidades}}</li>
+      </ul>
+      <div class="float-sm-start me-2">
+        <button (click)="detail(product.key)" class="btn btn-primary">Ver Mas</button>
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a href="#" class="btn btn-warning">Añadir</a>
+        <input class="form-control small" type="number">
+      </div>
+    </div>
+  </div>
+  

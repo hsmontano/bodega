@@ -1,0 +1,36 @@
+<body>
+    <div class="container-fluid">
+      <h1 class="h3 mb-3 font-weight-normal text-white text-center">Inicia Sesi&oacute;n</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="singIn()">
+        <div class="mb-3 form-input">
+          <label for="inputEmail" class="form-label text-white">Username</label>
+          <input type="text" id="inputEmail" class="form-control" formControlName="email" name="email"
+                 placeholder="email" aria-labelledby="emailHelpInline" autofocus>
+          <div class="border-danger" *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty ||
+              loginForm.controls['email'].touched)">
+            <label class="text-danger" *ngIf="loginForm.controls['email'].errors?.['required']" >
+              Email is required.
+            </label>
+            <label class="text-danger" *ngIf="loginForm.controls['email'].errors?.['email']" >
+              Email must be a email valid.
+            </label>
+          </div>
+        </div>
+        <div class="mb-3 form-input">
+          <label for="inputPassword" class="form-label text-white">Password</label>
+          <input type="password" id="inputPassword" class="form-control" formControlName="password" name="password"
+                 placeholder="Password">
+          <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty ||
+              loginForm.controls['password'].touched)">
+            <label class="text-danger" *ngIf="loginForm.controls['password'].errors?.['required']">
+              Error en el inicio de sesion
+            </label>
+          </div>
+        </div>
+      </form>
+      <div class="text-center">
+        <button class="btn btn-lg btn-success btn-block" type="submit" (click)="singIn()" [disabled]="!loginForm.valid" >Ingresar</button>
+      </div>
+    </div>
+</body>
+    
