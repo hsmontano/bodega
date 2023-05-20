@@ -6,11 +6,12 @@
         <div class="col-3">
           <h5>¿Qu&eacute; est&aacute;s buscando?</h5>
           <form role="search">
-            <input class="form-control me-2" type="search" placeholder="Buscar producto" [(ngModel)]="filterproduct" name="filterproduct" aria-label="Search">
+            <input class="form-control me-2" type="search" placeholder="Buscar producto" 
+            [(ngModel)]="filterproduct" name="filterproduct" aria-label="Search">
         </form>
         </div>
       </div>
       <div class="row mt-4">
-        <app-card class="col-4" *ngFor="let product of products | filter: filterproduct " [product]="product"></app-card>
+        <app-card class="col-3" *ngFor="let product of products | filter: filterproduct " [product]="product"></app-card>
       </div>
 </div>
