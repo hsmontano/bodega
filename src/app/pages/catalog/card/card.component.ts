@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 
@@ -16,7 +16,7 @@ export class CardComponent {
   }
 
   detail(key: string | null): void {
-    this.router.navigate(['dashboard/product/', key], { skipLocationChange: true });
+    this.router.navigate(['dashboard/product/', key]);
   }
 
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/compat/database';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +8,17 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 export class ProductService {
 
   products: AngularFireList<Product> | undefined;
+  product: AngularFireObject<Product> | undefined;
 
   constructor(private db: AngularFireDatabase) { }
 
   getAllProducts(): AngularFireList<Product>{
-    return this.products = this.db.list('/productos');
+    this.products = this.db.list('/productos');
+    return this.products;
   }
 
-  getOneProduct(key: string): any {
-    return this.db.object('productos/'+ key).valueChanges();
+  getOneProduct(key: string): AngularFireObject<Product> {
+    this.product = this.db.object('productos/'+ key);
+    return this.product
   }
 }
