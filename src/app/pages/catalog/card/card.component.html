@@ -1,16 +1,16 @@
-<div class="card my-2 p-2" style="width: 18rem;">
+<div class="card shadow p-2 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
     <img src="assets/images/{{product.imagen}}" class="card-img-top" height="200" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{product.nombre}}</h5>
-      <ul>
+      <ul class="list-unstyled">
         <li>precio: {{product.precio | currency}}</li>
         <li>unidades disponibles: {{product.unidades}}</li>
       </ul>
-      <div class="float-sm-start me-2">
-        <button (click)="detail(product.key)" class="btn btn-primary">Ver Mas</button>
+      <div class="float-sm-start me-5">
+        <button (click)="detail(product.key)" class="btn btn-primary btn-sm">Ver Mas</button>
       </div>
-      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="#" class="btn btn-warning">Añadir</a>
+      <div class="d-grid gap-2 d-md-flex input-group-sm">
+        <button href="#" class="btn btn-warning btn-sm">Añadir</button>
         <input class="form-control small" type="number">
       </div>
     </div>
