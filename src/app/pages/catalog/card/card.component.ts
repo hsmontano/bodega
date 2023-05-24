@@ -37,7 +37,8 @@ export class CardComponent {
     this.productCart.nombre = product.nombre;
     this.productCart.precio = product.precio;
     this.productCart.imagen = product.imagen;
-    this.productCart.unidades = unidadesCart;
+    this.productCart.unidades = product.unidades;
+    this.productCart.unidadesCart = unidadesCart;
     this.cartService.addNewProduct(this.productCart);
   }
 

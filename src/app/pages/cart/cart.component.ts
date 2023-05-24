@@ -24,7 +24,11 @@ export class CartComponent implements OnInit {
     this.cartService.products.subscribe(
       data => {
         this.products = data;
-        this.total = this.cartService.total;
+        this.products.forEach((s) => {
+          if (s.subtotal !== undefined) {
+            this.total += s.subtotal;
+          }
+        })
       }
     );
   }
@@ -35,7 +39,7 @@ export class CartComponent implements OnInit {
         this.productService.payProducts(p.key, p);
       }
     });
-    this.products = [];
+    this.cartService.removeAllProduct();
     this.router.navigate(['dashboard/catalog']);
   }
 

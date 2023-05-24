@@ -26,17 +26,16 @@ export class CartService {
 
   addNewProduct(product: Product){
     var precio = product.precio;
-    var unidades = product.unidades;
+    var unidades = product.unidadesCart;
     if (precio !== undefined && unidades !== undefined) {
       product.subtotal = precio * unidades;
     }
     this.cartProducts.push(product);
-    this.cartProducts.forEach((s) => {
-      if (s.subtotal !== undefined) {
-        this._total += s.subtotal;
-      }
-    })
     this._products.next(this.cartProducts);
+  }
+
+  removeAllProduct(): void {
+    this._products.next([]);
   }
   
 }

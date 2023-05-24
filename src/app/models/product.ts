@@ -4,5 +4,6 @@ export interface Product {
     precio: number | undefined;
     imagen: string | undefined;
     unidades: number | undefined;
+    unidadesCart: number | undefined;
     subtotal: number | undefined;
 }
