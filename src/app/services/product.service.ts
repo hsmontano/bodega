@@ -21,4 +21,8 @@ export class ProductService {
     this.product = this.db.object('productos/'+ key);
     return this.product
   }
+
+  payProducts(key: string, value: Product): Promise<void> {
+    return this.db.list('/productos').update(key, value);
+  }
 }

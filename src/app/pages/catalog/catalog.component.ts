@@ -30,6 +30,5 @@ export class CatalogComponent {
     ).subscribe(data => {
       this.products = data as Product[];
     })
-
   }
 }
